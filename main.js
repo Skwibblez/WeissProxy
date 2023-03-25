@@ -24,7 +24,7 @@ function createImage(obj) {
     for (let i = 0; i < deckSize; i++) {
 
         var imagePath = obj.cards[i].imagepath;
-        var cardCode = obj.cards[i].cardcode;   
+        //var cardCode = obj.cards[i].cardcode;   
         var cardType = obj.cards[i].cardtype;   //Determine ch/e/cx
         var img = new Image();
         //Allow user to choose between jp/en later
@@ -37,10 +37,12 @@ function createImage(obj) {
         }
 
         //Convert cardcode to imagepath
-        var englishPath = formatEnglishPath(cardCode);
-        var blurryPath = blurryDomain + imagePath;
+        //var englishPath = formatEnglishPath(cardCode);
         //img.src = englishPath;
+
+        var blurryPath = blurryDomain + imagePath;
         img.src = blurryPath;
+        img.id = "card"
         document.body.appendChild(img);
     }
     
